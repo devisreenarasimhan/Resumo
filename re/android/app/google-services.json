@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "238981607787",
+    "project_id": "resumo-lol",
+    "storage_bucket": "resumo-lol.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:238981607787:android:5a02dd17532cbf78c09c2e",
+        "android_client_info": {
+          "package_name": "com.example.re"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "238981607787-4tlv0k38s330c18g94vver61quf1il0u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.re",
+            "certificate_hash": "ed54b2b84f33f70b59347652e19df63b05d0b33a"
+          }
+        },
+        {
+          "client_id": "238981607787-kjhdqe4g903k5iudvp4rbgestlg7jjk3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAJJeSrJa3smQqOzeFmRfLBpo2qtcQ1KIw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "238981607787-kjhdqe4g903k5iudvp4rbgestlg7jjk3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
