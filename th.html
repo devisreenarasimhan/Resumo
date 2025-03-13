@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INTERNATIONAL NEWS</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+    <link rel="stylesheet" href="same.css">
+
+
+</head>
+<body class="light-mode">
+    <div class="all">
+    <div class="heading">
+        <div class="burger-icon">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <div class="name">
+            <h1>ASHWAROODA</h1>
+            <img src="ashwaroda.jpeg" alt="logo" height="90px" width="90px">
+            <h1>EXPRESS</h1>
+            </div>
+            </div>
+        <div class="toggle">
+            <label class="theme-switch">
+                <input type="checkbox" id="theme-toggle">
+                <span class="slider"></span>
+            </label><br>
+        </div>
+    </div>
+    <br><br>
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="justin.html">Home</a></li>
+            <li><a href="international.html">International</a></li>
+            <li><a href="political.html">Political</a></li>
+            <li><a href="sports.html">Sports</a></li>
+            <li><a href="Crime.html">Crime</a></li>
+            <li><a href="fashion.html">Fashion</a></li>
+            <li><a href="agriculture.html">Agriculture</a></li>
+            <li><a href="technical.html">Technical</a></li>
+            <li><a href="climate.html">Climate</a></li>
+            <li><a href="entertainment.html">Entertainment</a></li>
+            <li><a href="games.html">Games</a></li>
+            <li><a href="#">Help</a></li>
+            <li><a href="education.html">Education</a></li>
+        </ul>
+    </nav>
+    <br>
+    <div class="search">
+        <input type="text" placeholder="Search here...">
+        
+   			
+<select id="country-state" name="country-state" onchange="navigateToLink()">
+    <option value="">Select</option>
+    <option value="climate.html">Chennai</option>
+    <option value="py.html">Puducherry</option>
+    <option value="cb.html">Coimbatore</option>
+    <option value="md.html">Madurai</option>
+    <option value="th.html">Thrichy</option>
+</select>
+
+
+        </div>
+    <div class="topic">
+        <img src="globe.png" alt="international" height="25px" width="25px">
+        <h1>CLIMATE NEWS</h1>
+    </div>
+    <br><br>
+	<div class="news">
+	<div class="text">
+<div class="weather-container">
+        
+    </div>
+	</div>
+<img src="//cdn.weatherapi.com/weather/64x64/day/143.png" alt="laddoo" width="400px" height="180px">
+</div>
+    
+    <hr>
+    <br>
+    <div class="logo">
+            <h3>Follow us on</h3>
+         <a href=""><img src="instagram-logo.png" alt="insta" width="40px" height="40px"></a>
+        <a href=""> <img src="facebook-logo-0.png" alt="insta" width="50px" height="50px"></a>
+         <a href=""><img src="Twitter-Emblem.png" alt="insta" width="50px" height="30px"></a>
+        </div>
+        <br><br>
+        <nav class="navbars">
+            <ul class="navlinks">
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Help and Support</a></li>
+            </ul>
+        </nav>
+        <br>
+        <div class="chatbot-icon">
+            <img src="chatbot.png" alt="Chatbot Icon" width="60" height="60">
+        </div>
+        <script src="same.js"></script><script src="load.js"></script></script>
+
+    <!-- External scripts at the end -->
+    <script src="same.js"></script>
+    <script src="load.js"></script>
+	
+<script>
+function navigateToLink() {
+    const selectElement = document.getElementById('country-state');
+    const selectedValue = selectElement.value;
+    if (selectedValue) {
+        window.location.href = selectedValue;
+    }
+}
+</script>
+    <script>
+        function fetchWeather() {
+weatherUrl= 'http://localhost:5009/api/news/Kerala';
+
+            fetch(weatherUrl)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(weatherData => {
+                    const location = weatherData.location;
+                    const current = weatherData.current;
+
+                    const weatherInfo = `
+                        <div class="weather">
+						<b>Details about ${location.region}</b><br>
+                            <b>Weather in ${location.name}</b><br>
+                            <label>Temperature: ${current.temp_c}°C</label><br>
+                            <label>Condition: ${current.condition.text}</label> <br>
+						   <b>The local time ${location.localtime}</b><br>
+						   <br>
+                            <label>Clouds: ${current.cloud}</label>
+							<label>Humidity: ${current.humiditiy}</label>
+							<label>Wind Gust: ${current.gust_mph} mph</label>
+							<br>
+							</div>
+							<br>
+                  </div>
+						
+                    `;
+
+                    
+                    document.querySelector('.weather-container').innerHTML += weatherInfo;
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        }
+        fetchWeather();
+    </script>
+</body>
+</html>
+
+
+

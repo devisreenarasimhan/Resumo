@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLIMATE NEWS</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+    <link rel="stylesheet" href="same.css">
+
+
+</head>
+<body class="light-mode">
+    <div class="all">
+    <div class="heading">
+        <div class="burger-icon">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <div class="name">
+            <h1>ASHWAROODA</h1>
+            <img src="ashwaroda.jpeg" alt="logo" height="90px" width="90px">
+            <h1>EXPRESS</h1>
+            </div>
+            </div>
+        <div class="toggle">
+            <label class="theme-switch">
+                <input type="checkbox" id="theme-toggle">
+                <span class="slider"></span>
+            </label><br>
+        </div>
+    </div>
+    <br><br>
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="justin.html">Home</a></li>
+            <li><a href="international.html">International</a></li>
+            <li><a href="political.html">Political</a></li>
+            <li><a href="sports.html">Sports</a></li>
+            <li><a href="Crime.html">Crime</a></li>
+            <li><a href="fashion.html">Fashion</a></li>
+            <li><a href="agriculture.html">Agriculture</a></li>
+            <li><a href="technical.html">Technical</a></li>
+            <li><a href="climate.html">Climate</a></li>
+            <li><a href="entertainment.html">Entertainment</a></li>
+            <li><a href="games.html">Games</a></li>
+            <li><a href="stocks.html">Stocks</a></li>
+            <li><a href="education.html">Education</a></li>
+        </ul>
+    </nav>
+    <br>
+    <div class="search">
+        <input type="text" placeholder="Search here...">
+        
+   			
+<select id="country-state" name="country-state" onchange="navigateToLink()">
+    <option value="">Select</option>
+    <option value="ch.html">Chennai</option>
+    <option value="py.html">Puducherry</option>
+    <option value="cb.html">Coimbatore</option>
+    <option value="md.html">Madurai</option>
+    <option value="th.html">Kerala</option>
+</select>
+
+
+        </div>
+    <div class="topic">
+        <img src="globe.png" alt="international" height="25px" width="25px">
+        <h1>CLIMATE NEWS</h1>
+    </div>
+    <br><br>
+	<div class="news">
+	<div class="text">
+<div class="weather-container">
+       
+    </div>
+	</div>
+<img src="//cdn.weatherapi.com/weather/64x64/day/143.png" alt="laddoo" width="400px" height="180px">
+</div>
+    
+    <hr>
+    <br>
+    
+        <script src="same.js"></script><script src="load.js"></script></script>
+<div class="content">
+<div class="news">
+<div class="text">
+    <b>Rahul Gandhi reacts to alleged use of 'animal fat' <br>in Tirupati Laddu:</b> <br><br>
+<label>Thirumala Tirupati Devasthanams, which manages the temple, asserted there was presence <br>of 'Lard'(pig fat) and 
+other impurities in the ghee, citing a lab report</label> 
+</div>
+<img src="maxresdefault.jpg" alt="laddoo" width="400px" height="180px">
+</div>
+<br><hr><br>
+<div class="news">
+    <div class="text">
+        <b>Rahul Gandhi reacts to alleged use of 'animal fat' <br>in Tirupati Laddu:</b> <br><br>
+    <label>Thirumala Tirupati Devasthanams, which manages the temple, asserted there was presence<br> of 'Lard'(pig fat) and 
+    other impurities in the ghee, citing a lab report</label> 
+    </div>
+    <img src="maxresdefault.jpg" alt="laddoo" width="400px" height="180px">
+    </div>
+    <br><hr><br>
+<div class="news">
+        <div class="text">
+            <b>Rahul Gandhi reacts to alleged use of 'animal fat' <br>in Tirupati Laddu:</b> <br><br>
+        <label>Thirumala Tirupati Devasthanams, which manages the temple, asserted there was presence <br>of 'Lard'(pig fat) and 
+        other impurities in the ghee, citing a lab report</label> 
+        </div>
+        <img src="maxresdefault.jpg" alt="laddoo" width="400px" height="180px">
+        </div>
+        <br><hr><br>
+        <div class="news">
+            <div class="text">
+                <b>Rahul Gandhi reacts to alleged use of 'animal fat' <br>in Tirupati Laddu:</b> <br><br>
+            <label>Thirumala Tirupati Devasthanams, which manages the temple, asserted there was presence <br>of 'Lard'(pig fat) and 
+            other impurities in the ghee, citing a lab report</label> 
+            </div>
+            <img src="maxresdefault.jpg" alt="laddoo" width="400px" height="180px">
+            </div>
+            <br><hr><br>
+            <br><br>
+			</div>
+        <div class="logo">
+            <h3>Follow us on</h3>
+         <a href=""><img src="instagram-logo.png" alt="insta" width="40px" height="40px"></a>
+        <a href=""> <img src="facebook-logo-0.png" alt="insta" width="50px" height="50px"></a>
+         <a href=""><img src="Twitter-Emblem.png" alt="insta" width="50px" height="30px"></a>
+        </div>
+        <br><br>
+       
+
+<script>
+function fetchNews() {
+    const url = `http://localhost:5008/api/news/climate`;
+    fetch(url)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            const articles = data.articles;
+
+         
+            const shuffledArticles = articles.sort(() => 0.5 - Math.random());
+
+            
+            const newsItems = document.querySelectorAll('.news');
+
+            shuffledArticles.forEach((article, index) => {
+                if (newsItems[index]) {
+                    newsItems[index].innerHTML = `
+                        <div class="text" onclick="window.location.href='single.html?url=${encodeURIComponent(article.url)}'">
+                            <b>${article.title}</b><br><br>
+                            <label>${article.description}</label>
+                        </div>
+                        <img src="${article.image}" alt="news image" width="400px" height="180px">
+                    `;
+                }
+            });
+ 
+            for (let i = shuffledArticles.length; i < newsItems.length; i++) {
+                newsItems[i].innerHTML = `
+                    <div class="text">
+                        <b>Fallback News Title</b><br><br>
+                        <label>Fallback news description.</label>
+                    </div>
+                    <img src="maxresdefault.jpg" alt="fallback image" width="400px" height="180px">
+                `;
+            }
+        })
+        .catch(error => {
+            console.error('Error fetching news:', error);
+            const newsItems = document.querySelectorAll('.news');
+            newsItems.forEach(item => {
+                item.innerHTML = `
+                    <div class="text">
+                        <b>Fallback News Title</b><br><br>
+                        <label>Fallback news description.</label>
+                    </div>
+                    <img src="maxresdefault.jpg" alt="fallback image" width="400px" height="180px">
+                `;
+            });
+        });
+}
+
+ 
+document.addEventListener("DOMContentLoaded", () => {
+    fetchNews();
+ 
+    setInterval(fetchNews, 600000);
+});
+
+ 
+document.getElementById('download-btn').addEventListener('click', function() {
+    const dateInput = document.getElementById('dateday').value;
+    if (!dateInput) {
+        alert("Please select a date.");
+        return; // Exit if no date is selected
+    }
+    
+    const date = new Date(dateInput);
+    const formattedDate = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
+    const category = 'EDUCATION';
+    const filename = `ASWAROODA_${formattedDate}_${category}.pdf`;
+
+  
+    const pdfContent = document.createElement('div');
+    pdfContent.innerHTML = `
+        <h1 style="text-align: center;">EDUCATION NEWS - ${formattedDate}</h1>
+        <div class="pdf-news-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 10px;">
+            ${Array.from(document.querySelectorAll('.news')).map(news => {
+                const title = news.querySelector('.text b') ? news.querySelector('.text b').innerHTML : 'No Title';
+                const description = news.querySelector('.text label') ? news.querySelector('.text label').innerHTML : 'No Description';
+                const imageSrc = news.querySelector('img') ? news.querySelector('img').src : 'maxresdefault.JPG'; // Corrected image reference
+                return `
+                    <div class="pdf-news" style="border: 1px solid #ccc; padding: 10px;">
+                        <b>${title}</b><br>
+                        <label>${description}</label><br>
+                        <img src="${imageSrc}" alt="news image" style="width: 100%; height: auto;">
+                    </div>
+                `;
+            }).join('')}
+        </div>
+    `;
+
+    
+    html2pdf().from(pdfContent).set({
+        margin: 1,
+		useCORS: true,
+        filename: filename,
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+    }).save();
+});
+</script>
+ <nav class="navbars">
+            <ul class="navlinks">
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Help and Support</a></li>
+            </ul>
+        </nav>
+        <br>
+        <div class="chatbot-icon">
+            <img src="chatbot.png" alt="Chatbot Icon" width="60" height="60">
+        </div>
+        <script src="same.js"></script><script src="load.js"></script></script>
+
+     
+    <script src="same.js"></script>
+    <script src="load.js"></script>
+	
+<script>
+function navigateToLink() {
+    const selectElement = document.getElementById('country-state');
+    const selectedValue = selectElement.value;
+    if (selectedValue) {
+        window.location.href = selectedValue;
+    }
+}
+</script>
+</body>
+</html>
+
+
+
